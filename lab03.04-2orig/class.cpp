@@ -15,7 +15,7 @@ Date::Date()
 Date::Date(int dayT, int monthT, int yearT)
 {
 	if (day < 1 || day > 31 || month < 1 || month > 12) {
-		std::cout << "Неверная дата";
+		std::cout << "Неверная дата\n";
 		day = 1;
 		month = 1;
 		year = 2000;
@@ -38,13 +38,13 @@ Date::Date(const std::string& date) {
 		year = stoi(date.substr(6, 2));
 	}
 	else {
-		std::cout << "Неверный формат";
+		std::cout << "Неверный формат\n";
 		day = 1;
 		month = 1;
 		year = 2000;
 	}
 	if (year < 2000) year += 2000;
-	if (day < 1 || day > 31 || month < 1 || month > 12) std::cout << "Неверная дата";
+	if (day < 1 || day > 31 || month < 1 || month > 12) std::cout << "Неверная дата\n";
 }
 std::string Date::toString() const {
 	return std::to_string(day) + "/" + std::to_string(month) + "/" + std::to_string(year);
